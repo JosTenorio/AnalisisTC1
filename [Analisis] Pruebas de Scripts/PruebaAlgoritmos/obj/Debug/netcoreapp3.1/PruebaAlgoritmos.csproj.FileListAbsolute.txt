@@ -1,0 +1,10 @@
+C:\Users\Jos\Desktop\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.exe
+C:\Users\Jos\Desktop\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.deps.json
+C:\Users\Jos\Desktop\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.runtimeconfig.json
+C:\Users\Jos\Desktop\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.runtimeconfig.dev.json
+C:\Users\Jos\Desktop\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.dll
+C:\Users\Jos\Desktop\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.pdb
+C:\Users\Jos\Desktop\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.AssemblyInfoInputs.cache
+C:\Users\Jos\Desktop\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.AssemblyInfo.cs
+C:\Users\Jos\Desktop\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.dll
+C:\Users\Jos\Desktop\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.pdb
