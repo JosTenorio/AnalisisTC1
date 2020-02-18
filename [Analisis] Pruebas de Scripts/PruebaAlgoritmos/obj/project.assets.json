@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jos\\Desktop\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj",
+      "projectUniqueName": "C:\\Users\\Jos\\Desktop\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj",
       "projectName": "PruebaAlgoritmos",
-      "projectPath": "C:\\Users\\Jos\\Desktop\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj",
+      "projectPath": "C:\\Users\\Jos\\Desktop\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj",
       "packagesPath": "C:\\Users\\Jos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jos\\Desktop\\PruebaAlgoritmos\\obj\\",
+      "outputPath": "C:\\Users\\Jos\\Desktop\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jos\\AppData\\Roaming\\NuGet\\NuGet.Config",
