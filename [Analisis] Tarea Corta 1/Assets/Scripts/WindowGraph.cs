@@ -11,7 +11,7 @@ public class WindowGraph : MonoBehaviour
     void Awake()
     {
         graphContainer = transform.Find("GraphContainer").GetComponent<RectTransform>();
-        List<int> valueList = new List<int>() { 0, 10, 50, 100, 50};
+        Dictionary<int, List<int>> valueList = new Dictionary<int, List<int>>() { { 1, new List<int> { 0, 50 } }, { 2, new List<int> { 10 } }, { 3, new List<int> { 100 } }, { 4, new List<int> { 50 } } };
         showGraph(valueList);
     }
 
@@ -27,16 +27,21 @@ public class WindowGraph : MonoBehaviour
         rectTransform.anchorMax = new Vector2(0, 0);
     }
 
-    void showGraph(List<int> valueList)
+    void showGraph(Dictionary<int, List<int>> valueList)
     {
-        float xSize = 50f;
-        float yMax = 100f + 5;
+        float xSize = ((graphContainer.sizeDelta.x - 20) / valueList.Count);
+        float yMax = 100;
         float graphHeight = graphContainer.sizeDelta.y;
-        for (int i = 0; i < valueList.Count; i++)
+        int counter = 0;
+        foreach (KeyValuePair<int, List<int>> entry in valueList)
         {
-            float xPos = 20 + i * xSize;
-            float yPos = 10 + (valueList[i] / yMax) * graphHeight;
-            createCircle(new Vector2(xPos, yPos));
+            float xPos = 20 + counter * xSize;
+            foreach (int data in entry.Value)
+            {
+                float yPos = (data / yMax) * graphHeight;
+                createCircle(new Vector2(xPos, yPos));
+            }
+            counter++;
         }
     }
 }
