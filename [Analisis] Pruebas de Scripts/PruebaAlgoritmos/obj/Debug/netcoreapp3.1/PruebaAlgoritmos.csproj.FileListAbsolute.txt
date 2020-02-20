@@ -18,4 +18,3 @@ C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos
 C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.AssemblyInfo.cs
 C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.dll
 C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.pdb
-C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.csprojAssemblyReference.cache

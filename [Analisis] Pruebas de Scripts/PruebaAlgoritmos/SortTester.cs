@@ -5,12 +5,12 @@ namespace PruebaAlgoritmos
 {
     class SortTester
     {
-        private static void BubbleSort(int[] a)
+        private static void BubbleSort(int[] arr)
         {
-            for (int i = 1; i <= a.Length - 1; ++i)
-                for (int j = 0; j < a.Length - i; ++j)
-                    if (a[j] > a[j + 1])
-                        Swap(ref a[j], ref a[j + 1]);
+            for (int i = 1; i <= arr.Length - 1; ++i)
+                for (int j = 0; j < arr.Length - i; ++j)
+                    if (arr[j] > arr[j + 1])
+                        Swap(ref arr[j], ref arr[j + 1]);
         }
 
         private static void Swap(ref int x, ref int y)
@@ -19,12 +19,12 @@ namespace PruebaAlgoritmos
             x = y;
             y = temp;
         }
+
         private static void Quick_Sort(int[] arr, int left, int right)
         {
             if (left < right)
             {
                 int pivot = Partition(arr, left, right);
-
                 if (pivot > 1)
                 {
                     Quick_Sort(arr, left, pivot - 1);
@@ -42,26 +42,20 @@ namespace PruebaAlgoritmos
             int pivot = arr[left];
             while (true)
             {
-
                 while (arr[left] < pivot)
                 {
                     left++;
                 }
-
                 while (arr[right] > pivot)
                 {
                     right--;
                 }
-
                 if (left < right)
                 {
                     if (arr[left] == arr[right]) return right;
-
                     int temp = arr[left];
                     arr[left] = arr[right];
                     arr[right] = temp;
-
-
                 }
                 else
                 {
@@ -69,109 +63,94 @@ namespace PruebaAlgoritmos
                 }
             }
         }
-        static private double RandomBubbleSort(int arrayLenght)
+
+        static private double RandomSort(int arrayLenght, Boolean sortingMethod)
         {
             Stopwatch stopwatch;
             int i;
             Random random = new Random();
             int[] arr = new int[arrayLenght];
+            long ticks;
             for (i = 0; i < arrayLenght; i++)
             {
-                arr[i] = random.Next(0, 1000);
+                arr[i] = random.Next(0, 10000);
             }
-            stopwatch = Stopwatch.StartNew();
-            BubbleSort(arr);
-            stopwatch.Stop();
-            long ticks = stopwatch.ElapsedTicks;
-            double microseconds = ((double)ticks / Stopwatch.Frequency) * 1000000.0;
-            microseconds = Math.Round(microseconds, 4);
-            return microseconds;
-        }
-        static private double RandomQuickSort(int arrayLenght)
-        {
-            Stopwatch stopwatch;
-            int i;
-            Random random = new Random();
-            int[] arr = new int[arrayLenght];
-            for (i = 0; i < arrayLenght; i++)
+            if (sortingMethod)
             {
-                arr[i] = random.Next(0, 1000);
+                stopwatch = Stopwatch.StartNew();
+                BubbleSort(arr);
+                stopwatch.Stop();
+                ticks = stopwatch.ElapsedTicks;
             }
-            stopwatch = Stopwatch.StartNew();
-            Quick_Sort(arr,0,arrayLenght-1);
-            stopwatch.Stop();
-            long ticks = stopwatch.ElapsedTicks;
+            else
+            {
+                stopwatch = Stopwatch.StartNew();
+                Quick_Sort(arr, 0, arrayLenght - 1);
+                stopwatch.Stop();
+                ticks = stopwatch.ElapsedTicks;
+            }
             double microseconds = ((double)ticks / Stopwatch.Frequency) * 1000000.0;
-            microseconds = Math.Round(microseconds, 4);
+            microseconds = Math.Round(microseconds, 2);
             return microseconds;
         }
 
-        static public List<Dictionary<int, double>> QuickSortTest(int[] arr) 
+        static public Dictionary<int, List<double>> SortTest(int[] arr, Boolean sortingMethod) 
         {
-            List<Dictionary<int, double>> result = new List<Dictionary<int, double>>();
-            Dictionary<int, double> dict = new Dictionary<int, double> ();
+            Dictionary<int, List<double>> dict = new Dictionary<int, List<double>>();
             Boolean first_cycle = true;
             int i = 0;
             while (i<arr.Length)
             {
+                List<double> timeValues = new List<double>();
                 if (first_cycle)
                 {
                     first_cycle = false;
-                    double time = RandomQuickSort(arr[i]);
+                    double time = RandomSort(arr[i], sortingMethod);
                 }
                 else
                 {
-                    double time = RandomQuickSort(arr[i]);
-                    dict.Add(arr[i], time);
+                    for (int cont = 0; cont<5; cont++)
+                    {
+                        double time = RandomSort(arr[i], sortingMethod);
+                        timeValues.Add(time);
+                    }
+                    dict.Add(arr[i], timeValues);
                     i++;
                 }
             }
-            result.Add(dict);
-            return result;
-        }
-
-        static public List<Dictionary<int, double>> BubbleSortTest(int[] arr)
-        {
-            List<Dictionary<int, double>> result = new List<Dictionary<int, double>>();
-            Dictionary<int, double> dict = new Dictionary<int, double>();
-            Boolean first_cycle = true;
-            int i = 0;
-            while (i < arr.Length)
-            {
-                if (first_cycle)
-                {
-                    first_cycle = false;
-                    double time = RandomBubbleSort(arr[i]);
-                }
-                else
-                {
-                    double time = RandomBubbleSort(arr[i]);
-                    dict.Add(arr[i], time);
-                    i++;
-                }
-            }
-            result.Add(dict);
-            return result;
+            return dict;
         }
 
         static void Main(string[] args)
         {
             int[] BSarrayLenghts = { 100, 200, 300, 400, 500, 600 };
             int[] QSarrayLenghts = { 100, 200, 300, 400, 500, 600 };
-            List<Dictionary<int, double>> result = QuickSortTest(QSarrayLenghts);
-            Dictionary<int, double> tempDict = result[0];
+            Dictionary<int, List<double>> results = SortTest(QSarrayLenghts, false);
             Console.WriteLine("QuickSort results: ");
             foreach (int i in QSarrayLenghts) 
             {
-                Console.WriteLine("With n = " + i.ToString() + ", the execution time is: " + tempDict[i].ToString() + " microseconds");
+                Console.Write("With n = " + i.ToString() + ", the execution times were: ");
+                foreach (double time in results[i]) 
+                {
+                    Console.Write(time.ToString() + " ");
+                }
+                Console.Write("microseconds");
+                Console.WriteLine("");
             }
-            result = BubbleSortTest(BSarrayLenghts);
-            tempDict = result[0];
-            Console.WriteLine("MergeSort results: ");           
+            Console.WriteLine("");
+            results = SortTest(BSarrayLenghts, true);
+            Console.WriteLine("BubbleSort results: ");
             foreach (int i in BSarrayLenghts)
             {
-                Console.WriteLine("With n = " + i.ToString() + ", the execution time is: " + tempDict[i].ToString() + " microseconds");
+                Console.Write("With n = " + i.ToString() + ", the execution times were: ");
+                foreach (double time in results[i])
+                {
+                    Console.Write(time.ToString() + " ");
+                }
+                Console.Write("microseconds");
+                Console.WriteLine("");
             }
+
         }
     }
 }
