@@ -18,3 +18,14 @@ C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos
 C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.AssemblyInfo.cs
 C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.dll
 C:\Users\Jos\Desktop\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.pdb
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.exe
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.deps.json
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.runtimeconfig.json
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.runtimeconfig.dev.json
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.dll
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\bin\Debug\netcoreapp3.1\PruebaAlgoritmos.pdb
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.csprojAssemblyReference.cache
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.AssemblyInfoInputs.cache
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.AssemblyInfo.cs
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.dll
+D:\Unity\Projects\Analisis_TC1\[Analisis] Pruebas de Scripts\PruebaAlgoritmos\obj\Debug\netcoreapp3.1\PruebaAlgoritmos.pdb

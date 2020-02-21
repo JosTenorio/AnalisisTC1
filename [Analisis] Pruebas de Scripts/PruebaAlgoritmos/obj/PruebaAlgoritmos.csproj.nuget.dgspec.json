@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jos\\Desktop\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj": {}
+    "D:\\Unity\\Projects\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jos\\Desktop\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj": {
+    "D:\\Unity\\Projects\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jos\\Desktop\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj",
+        "projectUniqueName": "D:\\Unity\\Projects\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj",
         "projectName": "PruebaAlgoritmos",
-        "projectPath": "C:\\Users\\Jos\\Desktop\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj",
-        "packagesPath": "C:\\Users\\Jos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jos\\Desktop\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\obj\\",
+        "projectPath": "D:\\Unity\\Projects\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\PruebaAlgoritmos.csproj",
+        "packagesPath": "C:\\Users\\Jota\\.nuget\\packages\\",
+        "outputPath": "D:\\Unity\\Projects\\Analisis_TC1\\[Analisis] Pruebas de Scripts\\PruebaAlgoritmos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
