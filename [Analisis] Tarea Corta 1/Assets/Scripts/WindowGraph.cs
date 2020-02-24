@@ -39,13 +39,13 @@ public class WindowGraph : MonoBehaviour
     {
         float xSize = ((graphContainer.sizeDelta.x - 20) / arraySizes.Length);
         float yMax = 600000;
-        float graphHeight = graphContainer.sizeDelta.y;
+        float timeValues = 15;
+        float ySize = ((graphContainer.sizeDelta.y - 5) / timeValues);
         int counter = 0;
         float xPos;
         foreach (int arraySize in arraySizes)
         {
             xPos = 80 + 20 + counter * xSize;
-            //float yPos = 5 + (dataFloat / yMax) * graphHeight;
             GameObject gameObject = new GameObject("xIndex", typeof(RectTransform));
             gameObject.transform.SetParent(indexContainer, false);
             RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
@@ -59,6 +59,25 @@ public class WindowGraph : MonoBehaviour
             xIndex.font = ArialFont;
             xIndex.fontSize = 18;
             xIndex.material = ArialFont.material;
+            counter++;
+        }
+        counter = 0;
+        while (counter <= timeValues)
+        {
+            float yPos = 60 + 5 + counter * ySize;
+            GameObject gameObject = new GameObject("yIndex", typeof(RectTransform));
+            gameObject.transform.SetParent(indexContainer, false);
+            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = new Vector2(40, yPos);
+            rectTransform.sizeDelta = new Vector2(60, 30);
+            rectTransform.anchorMin = new Vector2(0, 0);
+            rectTransform.anchorMax = new Vector2(0, 0);
+            Text yIndex = gameObject.AddComponent<Text>();
+            Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
+            yIndex.text = ((yMax / timeValues) * counter).ToString();
+            yIndex.font = ArialFont;
+            yIndex.fontSize = 16;
+            yIndex.material = ArialFont.material;
             counter++;
         }
     }
