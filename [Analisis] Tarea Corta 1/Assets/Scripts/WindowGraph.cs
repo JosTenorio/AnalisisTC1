@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Diagnostics;
-using System.Collections.Generic;
 
 public class WindowGraph : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class WindowGraph : MonoBehaviour
     {
         graphContainer = transform.Find("GraphContainer").GetComponent<RectTransform>();
         int[] arraySizes = { 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000 };
-        Dictionary<int, List<double>> valueListBubbleSort = SortTester.SortTest( arraySizes, true);
+        Dictionary<int, List<double>> valueListBubbleSort = SortTester.SortTest(arraySizes, true);
         Dictionary<int, List<double>> valueListQuickSort = SortTester.SortTest(arraySizes, false);
         ShowGraph(valueListBubbleSort);
         ShowGraph(valueListQuickSort);
@@ -28,7 +27,7 @@ public class WindowGraph : MonoBehaviour
         gameObject.GetComponent<Image>().sprite = circleSprite;
         RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = anchoredPosition;
-        rectTransform.sizeDelta = new Vector2(11, 11);
+        rectTransform.sizeDelta = new Vector2(20, 20);
         rectTransform.anchorMin = new Vector2(0, 0);
         rectTransform.anchorMax = new Vector2(0, 0);
     }
@@ -62,31 +61,6 @@ public class WindowGraph : MonoBehaviour
             counter++;
         }
         UnityEngine.Debug.Log(dataStringTot);
-    }
-
-    void OnGUI()
-    {
-        GUI.Label(new Rect(70, 510, 50, 50), "Size");
-        GUI.Label(new Rect(110, 510, 50, 50), "500");
-        GUI.Label(new Rect(150, 510, 50, 50), "1000");
-        GUI.Label(new Rect(200, 510, 50, 50), "1500");
-        GUI.Label(new Rect(250, 510, 50, 50), "2000");
-        GUI.Label(new Rect(305, 510, 50, 50), "2500");
-        GUI.Label(new Rect(355, 510, 50, 50), "3000");
-        GUI.Label(new Rect(410, 510, 50, 50), "3500");
-        GUI.Label(new Rect(460, 510, 50, 50), "4000");
-        GUI.Label(new Rect(510, 510, 50, 50), "4500");
-        GUI.Label(new Rect(560, 510, 50, 50), "5000");
-        GUI.Label(new Rect(610, 510, 50, 50), "5500");
-        GUI.Label(new Rect(660, 510, 50, 50), "6000");
-        GUI.Label(new Rect(715, 510, 50, 50), "6500");
-        GUI.Label(new Rect(765, 510, 50, 50), "7000");
-        GUI.Label(new Rect(820, 510, 50, 50), "7500");
-        GUI.Label(new Rect(870, 510, 50, 50), "8000");
-        GUI.Label(new Rect(920, 510, 50, 50), "8500");
-        GUI.Label(new Rect(970, 510, 50, 50), "9000");
-        GUI.Label(new Rect(1020, 510, 50, 50), "9500");
-        GUI.Label(new Rect(1070, 510, 50, 50), "10000");
     }
 }
 
