@@ -9,13 +9,16 @@ public class WindowGraph : MonoBehaviour
 {
     [SerializeField] private Sprite circleSprite;
     private RectTransform graphContainer;
+    private RectTransform indexContainer;
 
     void Awake()
     {
         graphContainer = transform.Find("GraphContainer").GetComponent<RectTransform>();
+        indexContainer = transform.Find("IndexContainer").GetComponent<RectTransform>();
         int[] arraySizes = { 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000 };
         Dictionary<int, List<double>> valueListBubbleSort = SortTester.SortTest(arraySizes, true);
         Dictionary<int, List<double>> valueListQuickSort = SortTester.SortTest(arraySizes, false);
+        ShowIndex(arraySizes);
         ShowGraph(valueListBubbleSort);
         ShowGraph(valueListQuickSort);
     }
@@ -32,11 +35,39 @@ public class WindowGraph : MonoBehaviour
         rectTransform.anchorMax = new Vector2(0, 0);
     }
 
+    void ShowIndex(int[] arraySizes)
+    {
+        float xSize = ((graphContainer.sizeDelta.x - 20) / arraySizes.Length);
+        float yMax = 600000;
+        float graphHeight = graphContainer.sizeDelta.y;
+        int counter = 0;
+        float xPos;
+        foreach (int arraySize in arraySizes)
+        {
+            xPos = 80 + 20 + counter * xSize;
+            //float yPos = 5 + (dataFloat / yMax) * graphHeight;
+            GameObject gameObject = new GameObject("xIndex", typeof(RectTransform));
+            gameObject.transform.SetParent(indexContainer, false);
+            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = new Vector2(xPos, 30);
+            rectTransform.sizeDelta = new Vector2(60, 30);
+            rectTransform.anchorMin = new Vector2(0, 0);
+            rectTransform.anchorMax = new Vector2(0, 0);
+            Text xIndex = gameObject.AddComponent<Text>();
+            Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
+            xIndex.text = arraySize.ToString();
+            xIndex.font = ArialFont;
+            xIndex.fontSize = 18;
+            xIndex.material = ArialFont.material;
+            counter++;
+        }
+    }
+
     void ShowGraph(Dictionary<int, List<double>> valueList)
     {
         UnityEngine.Debug.Log($"Inicio de Grafico");
         float xSize = ((graphContainer.sizeDelta.x - 20) / valueList.Count);
-        float yMax = 550000;
+        float yMax = 600000;
         float graphHeight = graphContainer.sizeDelta.y;
         int counter = 0;
         float xPos;
@@ -53,11 +84,6 @@ public class WindowGraph : MonoBehaviour
                 CreateCircle(new Vector2(xPos, yPos));
             }
             dataStringTot += dataString;
-            GameObject gameObject = new GameObject("index");
-            gameObject.transform.SetParent(this.graphContainer.transform);
-            Text index = gameObject.AddComponent<Text>();
-            index.text = entry.Key.ToString();
-            index.transform.position = new Vector3(xPos, 5, 0);
             counter++;
         }
         UnityEngine.Debug.Log(dataStringTot);
