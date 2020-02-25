@@ -19,15 +19,18 @@ public class WindowGraph : MonoBehaviour
         Dictionary<int, List<double>> valueListBubbleSort = SortTester.SortTest(arraySizes, true);
         Dictionary<int, List<double>> valueListQuickSort = SortTester.SortTest(arraySizes, false);
         ShowIndex(arraySizes);
-        ShowGraph(valueListBubbleSort);
-        ShowGraph(valueListQuickSort);
+        ShowGraph(valueListBubbleSort, Color.green);
+        ShowGraph(valueListQuickSort, Color.cyan);
+        CreateCircle(new Vector2(450, 615), Color.cyan);
+        CreateCircle(new Vector2(580, 615), Color.green);
     }
 
-    void CreateCircle(Vector2 anchoredPosition)
+    void CreateCircle(Vector2 anchoredPosition, Color color)
     {
         GameObject gameObject = new GameObject("circle", typeof(Image));
         gameObject.transform.SetParent(graphContainer, false);
         gameObject.GetComponent<Image>().sprite = circleSprite;
+        gameObject.GetComponent<Image>().color = color;
         RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = anchoredPosition;
         rectTransform.sizeDelta = new Vector2(20, 20);
@@ -43,6 +46,7 @@ public class WindowGraph : MonoBehaviour
         float ySize = ((graphContainer.sizeDelta.y - 5) / timeValues);
         int counter = 0;
         float xPos;
+        Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
         foreach (int arraySize in arraySizes)
         {
             xPos = 80 + 20 + counter * xSize;
@@ -50,11 +54,10 @@ public class WindowGraph : MonoBehaviour
             gameObject.transform.SetParent(indexContainer, false);
             RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = new Vector2(xPos, 30);
-            rectTransform.sizeDelta = new Vector2(60, 30);
+            rectTransform.sizeDelta = new Vector2(50, 30);
             rectTransform.anchorMin = new Vector2(0, 0);
             rectTransform.anchorMax = new Vector2(0, 0);
             Text xIndex = gameObject.AddComponent<Text>();
-            Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
             xIndex.text = arraySize.ToString();
             xIndex.font = ArialFont;
             xIndex.fontSize = 18;
@@ -73,7 +76,6 @@ public class WindowGraph : MonoBehaviour
             rectTransform.anchorMin = new Vector2(0, 0);
             rectTransform.anchorMax = new Vector2(0, 0);
             Text yIndex = gameObject.AddComponent<Text>();
-            Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
             yIndex.text = ((yMax / timeValues) * counter).ToString();
             yIndex.font = ArialFont;
             yIndex.fontSize = 16;
@@ -82,7 +84,7 @@ public class WindowGraph : MonoBehaviour
         }
     }
 
-    void ShowGraph(Dictionary<int, List<double>> valueList)
+    void ShowGraph(Dictionary<int, List<double>> valueList, Color color)
     {
         UnityEngine.Debug.Log($"Inicio de Grafico");
         float xSize = ((graphContainer.sizeDelta.x - 20) / valueList.Count);
@@ -100,7 +102,7 @@ public class WindowGraph : MonoBehaviour
                 dataString = data.ToString() + " | ";
                 float dataFloat = (float) data;
                 float yPos = 5 + (dataFloat / yMax) * graphHeight;
-                CreateCircle(new Vector2(xPos, yPos));
+                CreateCircle(new Vector2(xPos, yPos), color);
             }
             dataStringTot += dataString;
             counter++;
