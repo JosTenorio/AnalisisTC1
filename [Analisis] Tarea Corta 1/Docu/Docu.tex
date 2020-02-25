@@ -1,0 +1,93 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\renewcommand{\refname}{Bilbiografía}
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Tarea Corta 1\\
+{\footnotesize \textsuperscript{}IC3002 - Análisis de Algoritmos}
+{\footnotesize \textsuperscript{}Profe.: Yuen Law Wan}
+{\footnotesize \textsuperscript{}I Semestre 2020}
+}
+
+\author{\IEEEauthorblockN{Joseph Tenorio Pereira}
+\IEEEauthorblockA{\textit{2019064588} \\
+}
+\and
+\IEEEauthorblockN{Jose Pablo Muñoz}
+\IEEEauthorblockA{\textit{2019061904} \\
+}
+}
+
+\maketitle
+
+\begin{abstract}
+El abstract va aqui
+\end{abstract}
+
+
+\section{Introducción}
+La introducción va aqui\\
+
+\section{Descripción de los algoritmos}
+A continuación se dará una breve explicación de los algoritmos de ordenamiento analizados por medio
+de la graficación en \textit{Unity}. Estos corresponden a los métodos de \textit{Bubble Sort} y \textit{Quick Sort}, programados
+en el lenguaje \textit{C\#}. En dicha graficación, se estableció una relación entre la cantidad de elementos a ordenar y
+ la cantidad de microsegundos que le toma al algoritmo el realizar dicho ordenamiento. 
+
+
+\subsection{Agoritmo de odenamiento Bubble Sort}
+
+El primer método de ordenamiendo analizado corresponde al ordenamiento de burbuja, mejor conocido como \textit{Bubble Sort}.
+Este método es una simple e intuitiva solución al problema de acomodar ascendentemente una serie de números. 
+Dicha solución consiste en comparar cada número del arreglo con el número siguiente
+ (excepto el último número), e intercambiarlos si están en el orden incorrecto. Dicho recorrido, con 
+sus respectivas comparaciones e intercambios, se realiza una vez por cada elemento del arreglo
+ (como es el caso del algoritmo empleado en este trabajo),o bien, hasta que se realiza un recorrido completo sin intercambios.
+
+\subsection{Agoritmo de odenamiento Quick Sort}
+
+Por otro lado, el segundo método de ordenamiento analizado corresponde al ordenamiento rápido, mejor conocido
+como \textit{Quick Sort}. Este algoritmo pertenece a la categoría de divide y vencerás, en inglés, \textit{Divide and Conquer},
+ya que selecciona un elemento del arreglo como pivote y particiona los elementos de dicho arreglo en mayores y menores que el 
+pivote, posteriormente se ubica el pivote en la poisición correcta\cite{b1}. El proceso anterior es luego repetido recursivamente sobre
+los arreglos resultantes de la partición, hasta que todos ellos queden ordenados. El algoritmo empleado en el presente 
+análisis toma como pivote al primer elemento de los arreglos y fue tomado de \cite{b1}.\\
+
+\section{Análisis de resultados}
+Como ya se mencionó anteriormente, el gráfico empleado para este trabajo, apreciable en [Fig. 1], establece un relación entre
+ el número de elementos a ordenar (eje X) y el tiempo de ejecución (eje Y, en microsegundos) de los algoritmos de
+ \textit{Bubble Sort} y \textit{Quick Sort}. Cabe resaltar que para cada tamaño de arreglo del eje X se realizaron cinco corridas de
+los algoritmos, representadas por los puntos verdes y celestes según sea el caso.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.34]{grafico.png}}
+\caption{Gráfico resultante en \textit{Unity}.}
+\label{fig}
+\end{figure}
+
+El primer detalle a notar es el hecho de que el algoritmo de \textit{Bubble Sort} se vuelve extremedamente ineficiente conforme
+aumenta el tamaño del arreglo a ordenar, en especial si lo comparamos con el algoritmo de \textit{Quick Sort}. De hecho, la graficación
+podría dar a entender que el algoritmo de \textit{Quick Sort} mantiene un tiempo de ejecución constante, pero este no es el caso. En realidad,
+el crecimiento del tiempo de ejecución del algoritmo de \textit{Quick Sort} no se puede observar en las escalas requeridas para representar
+el crecimiento exponencial del tiempo de ejecución del algoritmo de \textit{Bubble Sort}. Lo anterior se debe a que el metodo \textit{Quick Sort}
+presenta un crecimiento de tiempo de ejecución logarítmico, el cual, nuevamente, es inapreciable debido a la escala usada.
+Otro detalle a notar en los resultados obtenidos es que los tiempos de ejecución del algoritmo de \textit{Bubble Sort} empleado poseen 
+una mayor varianza conforme crece el tamaño del arreglo ordenado.
+
+\section{Acceso al proyecto}
+El repositorio de GitHub en el cual se ubica el proeycto de \textit{Unity} empleado puede ser accesado mediante el siguiente link: \url{https://github.com/TilapiaBoi/Analisis_TC1.git}
+
+\begin{thebibliography}{00}
+\bibitem{b1} W3resource.com, ``C\# Sharp Searching and Sorting Algorithm Exercises: Quick sort'', Nov. 2019. Accesado el: 21 Feb., 2020. [Online]. Disponible en: https://www.w3resource.com/csharp-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-9.php
+\end{thebibliography}
+\end{document}
