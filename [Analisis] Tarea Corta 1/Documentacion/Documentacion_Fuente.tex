@@ -31,7 +31,7 @@
 \maketitle
 
 \begin{abstract}
-This documentation demonstrates a comparison between the execution time of two popular sorting algorithms used in computer science, specifically the Bubble-Sort algorithm vs the Quick-Sort algorithm. The results are presented in a comparative graph created in Unity by measuring the execution time of each algorithm several times and constantly increasing the amount of elements to be sorted by each one. Additionally, the algorithm’s logic is briefly reviewed. 
+This documentation demonstrates a comparison between the execution time of two popular sorting algorithms used in computer science, specifically the \textit{Bubble Sort} algorithm vs the \textit{Quick Sort} algorithm. The results are presented in a comparative graph created in Unity by measuring the execution time of each algorithm several times and constantly increasing the amount of elements to be sorted by each one. Additionally, the algorithm’s logic is briefly reviewed. 
 \end{abstract}
 
 
@@ -66,8 +66,8 @@ análisis toma como pivote al primer elemento de los arreglos y fue tomado de \c
 \section{Análisis de resultados}
 Como ya se mencionó anteriormente, el gráfico empleado para este trabajo, apreciable en [Fig. 1], establece un relación entre
  el número de elementos a ordenar (eje X) y el tiempo de ejecución (eje Y, en microsegundos) de los algoritmos de
- \textit{Bubble Sort} y \textit{Quick Sort}. Cabe resaltar que para cada tamaño de arreglo del eje X se realizaron cinco corridas de
-los algoritmos, representadas por los puntos verdes y celestes según sea el caso.
+ \textit{Bubble Sort} y \textit{Quick Sort}. Cabe resaltar que para cada tamaño de arreglo (eje X) se realizaron cinco corridas de
+cada algoritmo para mejorar la precisión del gráfico. Estas son representadas por los puntos verdes y celestes según sea el caso.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[scale=0.34]{grafico.png}}
@@ -75,17 +75,14 @@ los algoritmos, representadas por los puntos verdes y celestes según sea el cas
 \label{fig}
 \end{figure}
 
-El primer detalle a notar es el hecho de que el algoritmo de \textit{Bubble Sort} se vuelve extremedamente ineficiente conforme
-aumenta el tamaño del arreglo a ordenar, en especial si lo comparamos con el algoritmo de \textit{Quick Sort}. De hecho, la graficación
-podría dar a entender que el algoritmo de \textit{Quick Sort} mantiene un tiempo de ejecución constante, pero este no es el caso. En realidad,
-el crecimiento del tiempo de ejecución del algoritmo de \textit{Quick Sort} no se puede observar en las escalas requeridas para representar
-el crecimiento exponencial del tiempo de ejecución del algoritmo de \textit{Bubble Sort}. Lo anterior se debe a que el metodo \textit{Quick Sort}
-presenta un crecimiento de tiempo de ejecución logarítmico, el cual, nuevamente, es inapreciable debido a la escala usada.
+El primer detalle a notar es el hecho de que el algoritmo \textit{Bubble Sort} se vuelve extremedamente ineficiente conforme
+aumenta el tamaño del arreglo a ordenar comparado con el algoritmo \textit{Quick Sort}. De hecho, el algoritmo \textit{Bubble Sort} muesatra un comportamiento exponencial en la graficación ya que su notación O-Grande es de O($n^{2}$). En otro caso, el algoritmo \textit{Quick Sort} podría dar a entender que mantiene un tiempo de ejecución constante, cuando en realidad, el crecimiento del tiempo de ejecución del algoritmo \textit{Quick Sort} no se puede observar en la escala requerida para representar
+el crecimiento del algoritmo \textit{Bubble Sort}. Lo anterior se debe a que el método \textit{Quick Sort} presenta un comportamiento logarítmico en su caso promedio, el cual, nuevamente, es imperceptible debido a la magnitud de los valores del eje y. Cabe resaltar que el algoritmo \textit{Quick Sort} podría presentar un comportamiento exponencial de O($n^{2}$) en el peor de los casos.
 Otro detalle a notar en los resultados obtenidos es que los tiempos de ejecución del algoritmo de \textit{Bubble Sort} empleado poseen 
-una mayor varianza conforme crece el tamaño del arreglo ordenado.
+una mayor varianza entre pruebas de arreglos de igual tamaño conforme crece el tamaño de dicho arreglo.
 
 \section{Acceso al proyecto}
-El repositorio de GitHub en el cual se ubica el proeycto de \textit{Unity} empleado puede ser accesado mediante el siguiente link: \url{https://github.com/TilapiaBoi/AnalisisTC1.git}
+El repositorio de GitHub en el cual se ubica el proeycto de \textit{Unity} empleado puede ser accesado mediante el siguiente enlace: \url{https://github.com/TilapiaBoi/AnalisisTC1.git}
 
 \begin{thebibliography}{00}
 \bibitem{b1} W3resource.com, \textit{C\# Sharp Searching and Sorting Algorithm Exercises: Quick sort}, Nov. 2019. Accesado el: Feb. 21, 2020. [Online]. Disponible en: https://www.w3resource.com/csharp-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-9.php\\
